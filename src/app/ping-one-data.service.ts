@@ -7,8 +7,8 @@ export class PingOneDataService {
 
   constructor() { }
 
-  urlRiskPol ="http://localhost:3000/0";
-  urlRiskPred ="http://localhost:3000/1";
+  urlRiskPol ="/v1/getRiskPolicy";
+  urlRiskPred ="/v1/getRiskDecision";
 
   async getRiskPolData(): Promise<any> {
     const data = await fetch(this.urlRiskPol);

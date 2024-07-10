@@ -17,13 +17,9 @@ export class RiskpolicyComponent{
   constructor(){
     let data = [];
     this.p1DataService.getRiskPolData().then((res:any) => {
-      data[0] = res;
+      data = res;
       console.log(data);
-      this.p1DataService.getRiskPredData().then((res:any) => {
-        data[1] = res;
-        console.log(data);
-        showRiskPolData(data);
-      });
+      showRiskPolData(data);
     });
   }
  
