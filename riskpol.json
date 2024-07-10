@@ -1,0 +1,849 @@
+[
+    {
+        "_links": {
+            "environment": {
+                "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+            },
+            "self": {
+                "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPolicySets"
+            }
+        },
+        "_embedded": {
+            "riskPolicySets": [
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPolicySets/7a87b5da-449f-0bd0-14e3-4fd989a62b0c"
+                        }
+                    },
+                    "id": "7a87b5da-449f-0bd0-14e3-4fd989a62b0c",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "name": "Default Risk Policy",
+                    "description":"Those are the default values for the risk policy. We recommend changing them according to your organization's need and adding relevant IP ranges to a whitelist, using the Overrides.",
+                    "createdAt": "2020-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-06-25T13:59:45.592Z",
+                    "defaultResult": {
+                        "level": "LOW",
+                        "type": "VALUE"
+                    },
+                    "riskPolicies": [
+                        {
+                            "id": "63cc7846-a2aa-49dd-9e75-2273a8cfef79",
+                            "environment": {
+                                "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                            },
+                            "policySet": {
+                                "id": "7a87b5da-449f-0bd0-14e3-4fd989a62b0c"
+                            },
+                            "name": "HIGH_WEIGHTED_POLICY",
+                            "priority": 1,
+                            "result": {
+                                "level": "HIGH",
+                                "type": "VALUE"
+                            },
+                            "condition": {
+                                "between": {
+                                    "minScore": 75,
+                                    "maxScore": 1000
+                                },
+                                "aggregatedScores": [
+                                    {
+                                        "value": "${details.botDetection.level}",
+                                        "score": 80
+                                    },
+                                    {
+                                        "value": "${details.suspiciousDevice.level}",
+                                        "score": 80
+                                    },
+                                    {
+                                        "value": "${details.ipVelocityByUser.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.newDevice.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.userVelocityByIp.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.userBasedRiskBehavior.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.anonymousNetwork.level}",
+                                        "score": 50
+                                    },
+                                    {
+                                        "value": "${details.geoVelocity.level}",
+                                        "score": 50
+                                    },
+                                    {
+                                        "value": "${details.ipRisk.level}",
+                                        "score": 50
+                                    },
+                                    {
+                                        "value": "${details.userLocationAnomaly.level}",
+                                        "score": 50
+                                    }
+                                ],
+                                "type": "AGGREGATED_SCORES"
+                            },
+                            "createdAt": "2024-06-25T13:59:45.592Z",
+                            "updatedAt": "2024-06-25T13:59:45.592Z"
+                        },
+                        {
+                            "id": "dbd13459-812c-4932-85ec-264c1ff11946",
+                            "environment": {
+                                "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                            },
+                            "policySet": {
+                                "id": "7a87b5da-449f-0bd0-14e3-4fd989a62b0c"
+                            },
+                            "name": "MEDIUM_WEIGHTED_POLICY",
+                            "priority": 2,
+                            "result": {
+                                "level": "MEDIUM",
+                                "type": "VALUE"
+                            },
+                            "condition": {
+                                "between": {
+                                    "minScore": 40,
+                                    "maxScore": 75
+                                },
+                                "aggregatedScores": [
+                                    {
+                                        "value": "${details.botDetection.level}",
+                                        "score": 80
+                                    },
+                                    {
+                                        "value": "${details.suspiciousDevice.level}",
+                                        "score": 80
+                                    },
+                                    {
+                                        "value": "${details.ipVelocityByUser.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.newDevice.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.userVelocityByIp.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.userBasedRiskBehavior.level}",
+                                        "score": 75
+                                    },
+                                    {
+                                        "value": "${details.anonymousNetwork.level}",
+                                        "score": 50
+                                    },
+                                    {
+                                        "value": "${details.geoVelocity.level}",
+                                        "score": 50
+                                    },
+                                    {
+                                        "value": "${details.ipRisk.level}",
+                                        "score": 50
+                                    },
+                                    {
+                                        "value": "${details.userLocationAnomaly.level}",
+                                        "score": 50
+                                    }
+                                ],
+                                "type": "AGGREGATED_SCORES"
+                            },
+                            "createdAt": "2024-06-25T13:59:45.592Z",
+                            "updatedAt": "2024-06-25T13:59:45.592Z"
+                        }
+                    ],
+                    "evaluatedPredictors": [
+                        {
+                            "id": "097dd6d6-8473-092d-1754-307da80eca16"
+                        },
+                        {
+                            "id": "55a3b131-6707-03dc-3550-c9200a7ce345"
+                        },
+                        {
+                            "id": "6207377d-ab48-0da5-3e6d-44572fe1c8cd"
+                        },
+                        {
+                            "id": "3dc3f3bf-ea60-0286-03ca-0c1b92cc5083"
+                        },
+                        {
+                            "id": "239c2221-3428-055b-0893-7b4546a8d9e4"
+                        },
+                        {
+                            "id": "7e162abb-8e0d-015e-256f-b705d8588a6e"
+                        },
+                        {
+                            "id": "93480401-13a1-02de-1020-899c6b735c5d"
+                        },
+                        {
+                            "id": "9b3197a7-ab74-022c-24a7-0b55102e69de"
+                        },
+                        {
+                            "id": "4a855ffe-855c-0ecc-3abd-1aadc6748c38"
+                        },
+                        {
+                            "id": "e4da0d27-57a9-0dff-3b15-49bf41c7c01b"
+                        }
+                    ],
+                    "source": {
+                        "type": "DEFAULT"
+                    },
+                    "default": true
+                }
+            ]
+        },
+        "count": 1,
+        "size": 1
+    },
+    {
+        "_links": {
+            "environment": {
+                "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+            },
+            "self": {
+                "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors"
+            }
+        },
+        "_embedded": {
+            "riskPredictors": [
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/3f523a9b-538e-0983-1397-8868ce241417"
+                        }
+                    },
+                    "id": "3f523a9b-538e-0983-1397-8868ce241417",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "User Risk Behavior",
+                    "compactName": "userRiskBehavior",
+                    "licensed": true,
+                    "predictionModel": {
+                        "name": "login_anomaly_statistic"
+                    },
+                    "type": "USER_RISK_BEHAVIOR",
+                    "tooltip": "predictor.tooltip.user.risk.behavior.login.anomaly.statistic",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 50,
+                        "evaluated": false
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/6207377d-ab48-0da5-3e6d-44572fe1c8cd"
+                        }
+                    },
+                    "id": "6207377d-ab48-0da5-3e6d-44572fe1c8cd",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "IP Velocity",
+                    "compactName": "ipVelocityByUser",
+                    "licensed": true,
+                    "measure": "DISTINCT_COUNT",
+                    "of": "${event.ip}",
+                    "by": [
+                        "${event.user.id}"
+                    ],
+                    "every": {
+                        "unit": "HOUR",
+                        "quantity": 1,
+                        "minSample": 5
+                    },
+                    "use": {
+                        "type": "POISSON_WITH_MAX",
+                        "medium": 0.96,
+                        "high": 0.995
+                    },
+                    "slidingWindow": {
+                        "unit": "DAY",
+                        "quantity": 14,
+                        "minSample": 3
+                    },
+                    "fallback": {
+                        "strategy": "DEFAULT_FALLBACK",
+                        "high": 7,
+                        "medium": 5
+                    },
+                    "type": "VELOCITY",
+                    "tooltip": "predictor.tooltip.velocity.event.ip.by.event.user.id",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 75,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/239c2221-3428-055b-0893-7b4546a8d9e4"
+                        }
+                    },
+                    "id": "239c2221-3428-055b-0893-7b4546a8d9e4",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "User Velocity",
+                    "compactName": "userVelocityByIp",
+                    "licensed": true,
+                    "measure": "DISTINCT_COUNT",
+                    "of": "${event.user.id}",
+                    "by": [
+                        "${event.ip}"
+                    ],
+                    "every": {
+                        "unit": "HOUR",
+                        "quantity": 1,
+                        "minSample": 5
+                    },
+                    "use": {
+                        "type": "POISSON_WITH_MAX",
+                        "medium": 0.96,
+                        "high": 0.995
+                    },
+                    "slidingWindow": {
+                        "unit": "DAY",
+                        "quantity": 14,
+                        "minSample": 3
+                    },
+                    "fallback": {
+                        "strategy": "DEFAULT_FALLBACK",
+                        "high": 10,
+                        "medium": 5
+                    },
+                    "type": "VELOCITY",
+                    "tooltip": "predictor.tooltip.velocity.event.user.id.by.event.ip",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 75,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/7e162abb-8e0d-015e-256f-b705d8588a6e"
+                        }
+                    },
+                    "id": "7e162abb-8e0d-015e-256f-b705d8588a6e",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "User-Based Risk Behavior",
+                    "compactName": "userBasedRiskBehavior",
+                    "licensed": true,
+                    "predictionModel": {
+                        "name": "points"
+                    },
+                    "type": "USER_RISK_BEHAVIOR",
+                    "tooltip": "predictor.tooltip.user.risk.behavior.points",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 75,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/3dc3f3bf-ea60-0286-03ca-0c1b92cc5083"
+                        }
+                    },
+                    "id": "3dc3f3bf-ea60-0286-03ca-0c1b92cc5083",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "New Device",
+                    "compactName": "newDevice",
+                    "licensed": true,
+                    "detect": "NEW_DEVICE",
+                    "type": "DEVICE",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "true",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "false",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "tooltip": "predictor.tooltip.device.new.device",
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 75,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/93480401-13a1-02de-1020-899c6b735c5d"
+                        }
+                    },
+                    "id": "93480401-13a1-02de-1020-899c6b735c5d",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "Anonymous Network Detection",
+                    "compactName": "anonymousNetwork",
+                    "licensed": true,
+                    "whiteList": [],
+                    "type": "ANONYMOUS_NETWORK",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "true",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "false",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "tooltip": "predictor.tooltip.anonymous.network",
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 50,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/4a855ffe-855c-0ecc-3abd-1aadc6748c38"
+                        }
+                    },
+                    "id": "4a855ffe-855c-0ecc-3abd-1aadc6748c38",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "IP Reputation",
+                    "compactName": "ipRisk",
+                    "licensed": true,
+                    "whiteList": [],
+                    "type": "IP_REPUTATION",
+                    "tooltip": "predictor.tooltip.ip.reputation",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 50,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/9b3197a7-ab74-022c-24a7-0b55102e69de"
+                        }
+                    },
+                    "id": "9b3197a7-ab74-022c-24a7-0b55102e69de",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "Geovelocity Anomaly",
+                    "compactName": "geoVelocity",
+                    "licensed": true,
+                    "whiteList": [],
+                    "type": "GEO_VELOCITY",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "true",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "false",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "tooltip": "predictor.tooltip.geo.velocity",
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 50,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/e4da0d27-57a9-0dff-3b15-49bf41c7c01b"
+                        }
+                    },
+                    "id": "e4da0d27-57a9-0dff-3b15-49bf41c7c01b",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "User Location Anomaly",
+                    "compactName": "userLocationAnomaly",
+                    "licensed": true,
+                    "type": "USER_LOCATION_ANOMALY",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "tooltip": "predictor.tooltip.user.location.anomaly",
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 50,
+                        "evaluated": true
+                    },
+                    "radius": {
+                        "distance": 50,
+                        "unit": "kilometers"
+                    },
+                    "days": 90
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/097dd6d6-8473-092d-1754-307da80eca16"
+                        }
+                    },
+                    "id": "097dd6d6-8473-092d-1754-307da80eca16",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "Bot Detection",
+                    "compactName": "botDetection",
+                    "licensed": true,
+                    "type": "BOT",
+                    "tooltip": "predictor.tooltip.bot",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 80,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/55a3b131-6707-03dc-3550-c9200a7ce345"
+                        }
+                    },
+                    "id": "55a3b131-6707-03dc-3550-c9200a7ce345",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "Suspicious Device",
+                    "compactName": "suspiciousDevice",
+                    "licensed": true,
+                    "detect": "SUSPICIOUS_DEVICE",
+                    "type": "DEVICE",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "tooltip": "predictor.tooltip.device.suspicious.device",
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 80,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/066a6857-c544-0cfd-2440-382bc4b056c9"
+                        }
+                    },
+                    "id": "066a6857-c544-0cfd-2440-382bc4b056c9",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "Adversary In The Middle",
+                    "compactName": "adversaryInTheMiddle",
+                    "licensed": true,
+                    "domainWhiteList": [],
+                    "type": "ADVERSARY_IN_THE_MIDDLE",
+                    "tooltip": "predictor.tooltip.adversary.in.the.middle",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 80,
+                        "evaluated": true
+                    }
+                },
+                {
+                    "_links": {
+                        "environment": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                        },
+                        "self": {
+                            "href": "https://api.pingone.eu/v1/environments/7d60760e-8f8c-4716-a61c-f96bee6a27f9/riskPredictors/82a9d5b6-439e-04b1-2ea1-676cb6c5078c"
+                        }
+                    },
+                    "id": "82a9d5b6-439e-04b1-2ea1-676cb6c5078c",
+                    "environment": {
+                        "id": "7d60760e-8f8c-4716-a61c-f96bee6a27f9"
+                    },
+                    "createdAt": "2023-08-03T12:16:59.871Z",
+                    "createdBy": "SYSTEM_GENERATED",
+                    "updatedAt": "2023-08-03T12:16:59.871Z",
+                    "name": "Email Reputation",
+                    "compactName": "emailReputation",
+                    "licensed": true,
+                    "type": "EMAIL_REPUTATION",
+                    "tooltip": "predictor.tooltip.email.reputation",
+                    "condition": {
+                        "scores": [
+                            {
+                                "name": "HIGH",
+                                "value": "HIGH"
+                            },
+                            {
+                                "name": "MEDIUM",
+                                "value": "MEDIUM"
+                            },
+                            {
+                                "name": "LOW",
+                                "value": "LOW"
+                            }
+                        ]
+                    },
+                    "deletable": false,
+                    "default": {
+                        "weight": 5,
+                        "score": 80,
+                        "evaluated": false
+                    }
+                }
+            ]
+        },
+        "count": 13,
+        "size": 13
+    }
+]
