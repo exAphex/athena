@@ -19,11 +19,8 @@ export class RiskpolicyComponent {
   thresholds: RiskPredictor[] = [];
 
   constructor() {
-    let data = [];
     this.p1DataService.getRiskPolData().then((res: any) => {
-      data = res;
-      console.log(data);
-      this.showRiskPolData(data);
+      this.showRiskPolData(res);
     });
   }
 
