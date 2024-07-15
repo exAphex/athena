@@ -15,9 +15,9 @@
         <a href="https://apidocs.pingidentity.com/pingone/platform/v1/api/#post-create-risk-evaluation" class="card-link" target="_blank">P1 Protect API</a>
     </div>
 </section>
-<section class="hidden" style="margin: 1vi 0 0 0;">
-    <div id="signalsPayload" style="overflow-y: scroll;overflow-x: hidden;height: 100px;word-wrap: break-word;">SignalsPayloadPlaceholder</div>
+<section *ngIf="show" style="margin: 1vi 0 0 0;">
+    <div id="signalsPayload" style="overflow-y: scroll;overflow-x: hidden;height: 100px;word-wrap: break-word;">{{payloadContent}}</div>
 </section>
 <section style="margin: 1vi 0 0 0;">
-    <app-get-result [showTabs]="showTabs"></app-get-result>
+    <app-get-result [showTabs]="show" [signalsPayload]="payloadContent"></app-get-result>
 </section>

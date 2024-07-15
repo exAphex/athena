@@ -8,15 +8,25 @@ export class PingOneDataService {
   constructor() { }
 
   urlRiskPol ="/v1/getRiskPolicy";
-  urlRiskPred ="/v1/getRiskDecision";
+  urlRiskDec ="/v1/getRiskDecision";
 
   async getRiskPolData(): Promise<any> {
     const data = await fetch(this.urlRiskPol);
     return (await data.json());
   }
 
-  async getRiskPredData(): Promise<any> {
-    const data = await fetch(this.urlRiskPred);
+  async getRiskDecData(username:string,payload:string): Promise<any> {
+    let body = {"username":username};
+
+    const data = await fetch(this.urlRiskDec,{
+      headers: {
+        sdkpayload: payload,
+        "content-type": "application/json"
+      },
+      method: "post",
+      body: JSON.stringify(body)
+    });
+
     return (await data.json());
   }
 }

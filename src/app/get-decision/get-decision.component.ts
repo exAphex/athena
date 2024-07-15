@@ -12,16 +12,12 @@ import {RouterModule} from '@angular/router';
   styleUrl: './get-decision.component.css'
 })
 export class GetDecisionComponent {
-  showTabs: boolean = false;
+  show:boolean = false;
+  payloadContent:string = "";
 
   getDecision() {
-    console.log('Hallo'+signalsPayload);
-    let textAuth = document.getElementById('signalsPayload');
-    if(textAuth && textAuth.parentElement && signalsPayload) {
-      textAuth.parentElement.classList.remove("hidden");
-      textAuth.innerText = signalsPayload;
-      this.showTabs = true;
-    }
+    this.payloadContent = signalsPayload;
+    this.show = true;
   }
 
 }

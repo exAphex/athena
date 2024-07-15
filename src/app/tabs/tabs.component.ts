@@ -8,9 +8,7 @@ import {
   ContentChildren,
   QueryList,
   AfterContentInit,
-  ViewChild,
-  ComponentFactoryResolver,
-  ViewContainerRef
+  Input
 } from '@angular/core';
 
 import { TabComponent } from '../tab/tab.component';
@@ -27,8 +25,8 @@ import { NgFor } from '@angular/common';
 export class TabsComponent implements AfterContentInit {
   
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent> | undefined;
-  
   // contentChildren are set
+
   ngAfterContentInit() {
     // get all active tabs
     if(this.tabs){
@@ -52,12 +50,12 @@ export class TabsComponent implements AfterContentInit {
     // activate the tab the user has clicked on.
     tab.active = true;
     console.log(tab.title);
-    if(tab.title){
+    /*if(tab.title){
       this.setContent(tab.title);
-    }
+    }*/
     
   }
-
+  /*
   setContent(tabTitle:string):void{
     const elem = document.querySelector<HTMLElement>("[tabtitle='Full Response']");
     if (elem){
@@ -69,7 +67,7 @@ export class TabsComponent implements AfterContentInit {
           }
           break;
         }
-        case 'Full Response':{
+        case 'Full Response11':{
           console.log('The FULL RESPONSE');
           if (elem){
             elem.innerText = 'Full Response content';
@@ -103,7 +101,12 @@ export class TabsComponent implements AfterContentInit {
       }
     }
   }
+  */
 
 }
 
   
+  function ngAfterContentInit() {
+    throw new Error('Function not implemented.');
+  }
+

@@ -44,7 +44,8 @@ fastify.all("/v1/getRiskDecision", (req, res) => {
           id: "My Demo",
           name: "My Demo",
         },
-        ip: req.headers["x-forwarded-for"].split(",")[0],
+        //ip: req.headers["x-forwarded-for"].split(",")[0],
+        ip: req.ip,
         sdk: {
           signals: {
             data: req.headers.sdkpayload,
