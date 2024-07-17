@@ -9,21 +9,15 @@ const dotenv = require('dotenv');
 const btoa = require('btoa');
 const got = require('got');
 
-// Require the fastify framework and instantiate it
-const fastify = Fastify({ logger: false });
 
+const fastify = Fastify({ logger: false });
 dotenv.config();
-console.log(`Your port is ${process.env.PORT}`); // 8626
 
 /******************************************
  * PingOne Risk - Evaluation request
  ******************************************/
 fastify.all("/v1/getRiskDecision", (req, res) => {
-  //console.log(req)
-
   const username = req.body.username;
-
-  console.log("Getting Risk Eval for: ", username);
 
   // Get P1 Worker Token
   getPingOneToken((pingOneToken) => {
@@ -44,7 +38,6 @@ fastify.all("/v1/getRiskDecision", (req, res) => {
           id: "My Demo",
           name: "My Demo",
         },
-        //ip: req.headers["x-forwarded-for"].split(",")[0],
         ip: req.ip,
         sdk: {
           signals: {
@@ -54,21 +47,10 @@ fastify.all("/v1/getRiskDecision", (req, res) => {
         flow: {
           type: "AUTHENTICATION",
         },
-        /*session: {
-          id: "1",
-        },*/
         user: {
           id: username,
           name: username,
           type: "EXTERNAL",
-          /*groups: [
-            {
-              name: "dev",
-            },
-            {
-              name: "sre",
-            },
-          ],*/
         },
         sharingType: "PRIVATE",
         browser: {
@@ -101,14 +83,9 @@ fastify.all("/v1/getRiskDecision", (req, res) => {
  * PingOne Risk - Get Risk policy information
  ******************************************/
 fastify.all("/v1/getRiskPolicy", (req, res) => {
-  //console.log(req)
-
-  console.log("Get risk policy");
-
   // Get P1 Worker Token
   getPingOneToken((pingOneToken) => {
     // URL must match the Risk EnvID used to create the payload
-    console.log(pingOneToken);
     const url_riskPol =
       "https://api.pingone.eu/v1/environments/" +
       process.env.envId +
@@ -133,21 +110,14 @@ fastify.all("/v1/getRiskPolicy", (req, res) => {
       .then((data) => {
         const content = data
         
-        
-        //res.send(data);
-      
         got(url_riskPred,{
           headers: headers,
           method: "get"
         })
           .json()
           .then((data) => {
-            console.log(data);
-            
             const out = [content,data]
-            
             res.send(out);  
-          
           })
           .catch((err) => {
             console.log(err);
