@@ -33,6 +33,7 @@ The PingOne Protect API is secured by authentication, therefore you will need to
 6. Set **Environment Admin** and **Identity Admin** Role. Attach only your current environment to the roles.
 ![WorkerApp_Step4](/assets/Create_Worker_4.png)
 
+![WorkerApp_Step5](/assets/Create_Worker_5.png)
 
 7. Switch to **Overview** Tab to see details like EnviromentID,ClientID and ClientSecret
 ![WorkerApp_Step6](/assets/Create_Worker_6.png)
