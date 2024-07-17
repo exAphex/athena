@@ -8,6 +8,14 @@ This can be done via REST API integration in your backend and later be handled a
 
 # Architecture
 
+# Functionalities
+* Evaluate risk
+* Show risk indicators
+
+# Prerequisites
+* PingOne Environment with PingOne Protect enabled
+* NodeJS 18
+* Angular 18
 
 # Setup
 The PingOne Protect API is secured by authentication, therefore you will need to create a worker app in the PingOne Admin Interface and store the credentials in the backend. For convenience purposes we will store them in environment variables, you might want to use a secure storage or vault for them in a productive system.
@@ -41,7 +49,13 @@ clientSecret=sIHJurYHEtrgK3cO9Uh70mxv8QvI9hBdWRcJz9MOpmGvXVHM239HvcZn
 ```
 
 ## Start application
-tbd
+The launch configuration is stored in the package.json file. It will launch a node instance for the backend and a second ng instance for the angular frontend.
 
-# Functionalities
+```
+npm start
+```
+
+The frontend will run at port 4200, you can call it with your browser: **http://localhost:4200**
+
+
 
