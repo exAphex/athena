@@ -9,6 +9,9 @@ This can be done via REST API integration in your backend and later be handled a
 # Architecture
 ![Architecture](/assets/architecture.png)
 
+## Sequence diagram for evaluating risk
+
+
 # Functionalities
 * Evaluate risk
 * Show risk indicators
