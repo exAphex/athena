@@ -16,7 +16,29 @@ The PingOne Protect API is secured by authentication, therefore you will need to
 tbd
 
 ## Setup repository
-tbd
+You will need to clone the repository and install the node dependencies.
+
+```
+git clone https://github.com/exAphex/athena.git
+cd athena
+npm install
+```
+
+Now set up the credentials from the worker app in the environment file. We provide a template for in in the **.env.example** file.
+
+```
+cp .env.example .env
+```
+
+Open the **.env** file in you code editor and add your individual worker app credentials into it.
+
+Example:
+```
+PORT=3000
+envId=7f40730h-2c52-4986-b64f-f89bdc9a87g1
+clientId=54923baa-82fh-549e-ac1e-a03642748504
+clientSecret=sIHJurYHEtrgK3cO9Uh70mxv8QvI9hBdWRcJz9MOpmGvXVHM239HvcZn
+```
 
 ## Start application
 tbd
