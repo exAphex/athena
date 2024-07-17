@@ -3,7 +3,7 @@ This is a proof of concept for calling PingOne Protect directly from a backend (
 The frontend will call the PingOne Protect SDK, which will deliver a risk payload and send it to the backend. The backend will call the risk evaluation API of PingOne Protect and proxy the response back to the UI.
 
 # Abstract
-While PingOne Protect is embedded into the PingOne Platform and can be integrated into PingOne DaVinci flows like described here, you can use the product as a standalone solution for evaluating risk in your web application.
+While PingOne Protect is embedded into the PingOne Platform and can be integrated into PingOne DaVinci flows like described [here](https://docs.pingidentity.com/r/en-us/pingone/pingone_protect_building_custom_flow_davinci), you can use the product as a standalone solution for evaluating risk in your web application.
 This can be done via REST API integration in your backend and later be handled accordingly (block user or add friction to the authentication step).
 
 # Architecture
