@@ -7,6 +7,7 @@ While PingOne Protect is embedded into the PingOne Platform and can be integrate
 This can be done via REST API integration in your backend and later be handled accordingly (block user or add friction to the authentication step).
 
 # Architecture
+![Architecture](/assets/architecture.png)
 
 # Functionalities
 * Evaluate risk
