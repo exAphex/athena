@@ -22,7 +22,20 @@ This can be done via REST API integration in your backend and later be handled a
 The PingOne Protect API is secured by authentication, therefore you will need to create a worker app in the PingOne Admin Interface and store the credentials in the backend. For convenience purposes we will store them in environment variables, you might want to use a secure storage or vault for them in a productive system.
 
 ## Create worker app in PingOne
-tbd
+1. Open/Create a PingOne environment.
+2. Navigate to Applications -> Applications
+3. Create new Application
+![WorkerApp_Step1](/assets/Create_Worker_1.png)
+4. Set Application Name, select Application Type **Worker** and press Save
+![WorkerApp_Step2](/assets/Create_Worker_2.png)
+5. Activate Application and open **Grant Roles**
+![WorkerApp_Step3](/assets/Create_Worker_3.png)
+6. Set **Environment Admin** and **Identity Admin** Role. Attach only your current environment to the roles.
+![WorkerApp_Step4](/assets/Create_Worker_4.png)
+
+![WorkerApp_Step5](/assets/Create_Worker_5.png)
+7. Switch to **Overview** Tab to see details like EnviromentID,ClientID and ClientSecret
+![WorkerApp_Step6](/assets/Create_Worker_6.png)
 
 ## Setup repository
 You will need to clone the repository and install the node dependencies.
