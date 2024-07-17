@@ -31,13 +31,9 @@ function callbackFct() {
     // Point this to your P1 Risk EnvId
     envId : "7d60760e-8f8c-4716-a61c-f96bee6a27f9" // PingOne EnvID - API Security
     }).then(function () {
-        console.log("PingOne Signals initialized successfully");
-    // Uncomment the below if you want to profile on init
         return signals.getData()
     }).then(function (payload:any) {
         signalsPayload = payload;
-        //console.log('Payload: ' +payload);
-        
     }).catch(function (e:any) {
         console.error("SDK Init failed", e);
     });

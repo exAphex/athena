@@ -49,7 +49,6 @@ export class TabsComponent implements AfterContentInit {
     
     // activate the tab the user has clicked on.
     tab.active = true;
-    console.log(tab.title);
     /*if(tab.title){
       this.setContent(tab.title);
     }*/
@@ -104,9 +103,3 @@ export class TabsComponent implements AfterContentInit {
   */
 
 }
-
-  
-  function ngAfterContentInit() {
-    throw new Error('Function not implemented.');
-  }
-

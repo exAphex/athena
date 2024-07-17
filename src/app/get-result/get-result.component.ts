@@ -27,12 +27,9 @@ export class GetResultComponent  implements OnInit, OnChanges{
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes?.['showTabs'].currentValue && changes?.['signalsPayload'].currentValue ) {
-      console.log(this.show); // here you'll see the value
-      console.log(changes?.['showTabs'].currentValue); // here you'll see the value
       this.show = changes?.['showTabs'].currentValue;
 
       this.p1DataService.getRiskDecData('testuser',changes?.['signalsPayload'].currentValue).then((res: any) => {
-        console.log(res);
         this.response = res;
         this.fullTab= JSON.stringify(res,null,2);
         this.resultTab= JSON.stringify(res.result,null,2);
