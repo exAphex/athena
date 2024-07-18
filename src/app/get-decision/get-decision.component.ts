@@ -26,10 +26,10 @@ let signalsPayload:any;
 
 function callbackFct() {
   let signals = (window as { [key: string]: any })["_pingOneSignals"] as any;
-  
+
   signals.initSilent({
     // Point this to your P1 Risk EnvId
-    envId : "7d60760e-8f8c-4716-a61c-f96bee6a27f9" // PingOne EnvID - API Security
+    envId : process.env['envId'] // PingOne EnvID - API Security
     }).then(function () {
         return signals.getData()
     }).then(function (payload:any) {
@@ -41,7 +41,9 @@ function callbackFct() {
   
 function init(callback:SignalsSDK) {
   let ready = (window as { [key: string]: any })["_pingOneSignalsReady"] as boolean;
-   
+  
+  (<any>window)._pingOneSignalsCustomHost ="mydomain.com";
+
    if (ready) {
      callback();
    } else {
