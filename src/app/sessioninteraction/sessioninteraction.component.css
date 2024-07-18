@@ -1,0 +1,14 @@
+section{
+    background: white;
+    padding: 2vi 2vi 2vi 2vi;
+    border: solid 1px grey;
+    border-radius: 0.5vi;
+}
+
+.hidden{
+    display: none;
+}
+
+.card-link{
+    margin-left: 1rem;
+}

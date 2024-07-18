@@ -1,0 +1,17 @@
+<app-tabs>
+    <app-tab [tabTitle]="'Result'">
+        <pre>{{resultTab}}</pre>
+    </app-tab>
+    <app-tab *ngIf="showTabs" tabTitle="Low">
+        <pre>{{lowTab}}</pre>
+    </app-tab>
+    <app-tab *ngIf="showTabs" tabTitle="Medium">
+        <pre>{{mediumTab}}</pre>
+    </app-tab>
+    <app-tab *ngIf="showTabs" tabTitle="High">
+        <pre>{{highTab}}</pre>
+    </app-tab>
+    <app-tab tabTitle="Full Response">
+        <pre>{{fullTab}}</pre>
+    </app-tab>
+</app-tabs>
